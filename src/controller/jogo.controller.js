@@ -1,4 +1,3 @@
-// src/controller/jogo.controller.js
 const Jogo = require('../model/jogo.model');
 
 async function listarJogos(req, res) {

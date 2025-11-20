@@ -1,4 +1,3 @@
-// src/db/index.js
 const { Pool } = require('pg');
 const dotenv = require('dotenv');
 
@@ -12,13 +11,11 @@ const pool = new Pool({
   database: process.env.DB_NAME,
 });
 
-// Função helper para queries (sempre parametrizadas)
 async function query(text, params) {
   const result = await pool.query(text, params);
   return result;
 }
 
-// Fecha conexões (usar ao encerrar app)
 async function close() {
   await pool.end();
 }
